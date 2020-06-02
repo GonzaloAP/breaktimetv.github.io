@@ -200,12 +200,7 @@ function checkCookie(PageTitle, PageDescription, PageUrl, portada, fecha_hora ) 
 
         }
 
-        var OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-          OneSignal.init({
-            appId: "a1b99a86-a44f-456b-b5d1-7e027d43699f",
-          });
-        });
+ 
       
     
     }else{
