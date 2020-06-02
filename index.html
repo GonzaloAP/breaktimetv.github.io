@@ -1,0 +1,230 @@
+---
+layout: main
+title: "BreakTime Tv"
+description: Miles de películas y series para disfrutarlo de manera online en calidad HD, Latino, Castellano y Subtitulado, sin cortes, sin publicidad y gratis solo en BreakTimeTV
+principal: "si"
+image_banner: 'https://res.cloudinary.com/imbriitneysam/image/upload/v1542687829/bannercito.jpg'
+---
+
+{% assign min = 0 %}
+{% assign max = site.posts.size %}
+{% assign diff = max | minus: min %}
+{% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}
+<main  class="home" id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+	<div class="video" id="video-reproduccion" style="display:none">
+	 <section class="content-section video-section">
+	 <a id="bgndVideo" class="player" data-property="{videoURL:'{{site.posts[randomNumber].trailer}}',containment:'.video-section', quality:'hd720', autoPlay:true,  optimizeDisplay:true, mute:false, opacity:1, useOnMobile:false}"></a>
+						 <div class="container" style="    padding-top: 35px;">
+								 <div class="col-lg-12">
+									 <h1 class="h1Video" align="justify">{{site.posts[randomNumber].title}} </h1>
+								 </div>  
+								 <div style="margin-left: 30px;" class="col-lg-12">
+									 <h3 class="h2Video" align="justify">{{site.posts[randomNumber].description_corta}}</h3>
+									 {% if site.posts[randomNumber].estrellas =='1' %}
+										 <span class="fa fa-star tamanio checked" ></span>
+										 <span class="fa fa-star tamanio"></span>
+										 <span class="fa fa-star tamanio"></span>
+										 <span class="fa fa-star tamanio"></span>
+										 <span class="fa fa-star tamanio"></span>
+										 {%else%}
+										 {% if site.posts[randomNumber].estrellas =='2' %}
+										 <span class="fa fa-star tamanio checked"></span>
+										 <span class="fa fa-star tamanio checked"></span>
+										 <span class="fa fa-star tamanio"></span>
+										 <span class="fa fa-star tamanio"></span>
+										 <span class="fa fa-star tamanio"></span> 
+										 {%else%}
+										 {% if site.posts[randomNumber].estrellas =='3' %}
+										 <span class="fa fa-star tamanio checked"></span>
+										 <span class="fa fa-star tamanio checked"></span>
+										 <span class="fa fa-star tamanio checked"></span>
+										 <span class="fa fa-star tamanio"></span>
+										 <span class="fa fa-star tamanio"></span>
+										 {%else%}
+										 {% if site.posts[randomNumber].estrellas =='4' %}
+										 <span class="fa fa-star tamanio checked"></span>
+										 <span class="fa fa-star tamanio checked"></span>
+										 <span class="fa fa-star tamanio checked"></span>
+										 <span class="fa fa-star tamanio checked"></span>
+										 <span class="fa fa-star tamanio"></span>
+										 {%else%}
+										 {% if site.posts[randomNumber].estrellas =='5' %}
+										 <span class="fa fa-star tamanio checked"></span>
+										 <span class="fa fa-star tamanio checked"></span>
+										 <span class="fa fa-star tamanio checked"></span>
+										 <span class="fa fa-star tamanio checked"></span>
+										 <span class="fa fa-star tamanio checked"></span>
+										 {%endif%}
+										 {%endif%}
+										 {%endif%}
+										 {%endif%}
+										 {%endif%}
+									 <span class="tamanio_left"> {{ site.posts[randomNumber].anio }} </span>
+									 <span class="tamanio_left clasificacion">{{ site.posts[randomNumber].idioma }}</span>
+									 <span class="tamanio_left"> {{ site.posts[randomNumber].duracion }} </span>
+									 <span class="tamanio_left clasificacion">{{ site.posts[randomNumber].calidad }}</span>
+									 <span class="tamanio_left clasificacion">PG: {{ site.posts[randomNumber].clasificacion }}</span>
+								 </div>  
+								 <div class="col-lg-12">
+										 <a onclick="mostrar()" class="header-video__play-trigger2" href="{{ site.posts[randomNumber].url | prepend: site.baseurl }}"><i class="fas fa-play" style="padding-right: 5px;"></i> Ver Ahora</a>
+								 </div>    
+								 <div class="col-lg-12" align="center">
+										 <a class="header-video__play-trigger3" href="#ver">Ver Más Contenido <i class="fas fa-long-arrow-alt-down" style="padding-left: 5px;"></i></a>
+								 </div>  
+							  	    
+						 </div>
+	 </section>
+ </div>
+
+ {% assign min = 0 %}
+		{% assign max = site.posts.size %}
+		{% assign diff = max | minus: min %}
+		{% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}
+ <div class="div-movil" id="contenedor-movil" >
+
+
+			<div id="portada_index" style="display:none;height: 400px;background-image: linear-gradient(0deg, rgb(17, 17, 17) 0%, rgba(0,0,0,0.7175245098039216) 49%, rgba(0,212,255,0) 100%), url({{site.posts[randomNumber].image_banner}});background-size: 100% 400px;background-repeat: no-repeat;">
+
+			</div>
+	
+	<div align="center" id="info_index" style="display:none;margin: -125px 10px 0 10px; text-align:center;padding-bottom: 15px;line-height:33px">
+			<p style="color:white;    font-size: 35px;
+			padding: 10px 10px 0px 10px;">{{site.posts[randomNumber].title}}</p>
+			
+			<p style="color:white;font-size: 14px;
+			padding-left: 10px;
+			padding-right: 10px;">{{site.posts[randomNumber].genero}}</p>
+			
+
+
+						<div class="col-lg-12" style="margin-top: 10px;">
+								<a onclick="mostrar()" style="border-radius: 5px;
+								background: white;
+								color: black;
+								font-size: 12px;
+								margin-left: 0px;
+								position: unset;
+								padding: 3px 15px;" class="header-video__play-trigger2" href="{{ site.posts[randomNumber].url | prepend: site.baseurl }}"><i class="fas fa-play" style="padding-right: 5px;"></i> Ver Ahora</a>
+
+							
+
+									<i id="prueba1" class="fas fa-exclamation-circle" style="    padding-left: 25px;padding-right: 5px;color:white"></i>
+
+									<span id="prueba2" style="color:white">Información</span>
+
+
+													
+
+
+					</div>
+
+				
+			</div>
+
+		<div cold-md="12" id="ver">
+
+				<div align="center">
+				
+
+				<h2 id="peliculas_series_texto" class="top_h3"> Estrenados recientemente </h2>
+
+				</div>
+		</div>
+
+
+
+ <div id="grid" class="row flex-grid">
+		 {% assign post_news = site.posts %}
+
+		 {% for post in post_news limit:24 %}
+
+					<article class="box-item col-xs-4 col-sm-2 col-md-2 col-lg-2" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+						<div class="box">
+						<div class="box-body">
+								{% if post.image_carousel %}
+										<div class="cover">
+												<a  onclick="mostrar()" href="{{ post.url | prepend: site.baseurl }}">
+												<img alt="{{ post.title }}" title="{{ post.title }}" src="https://res.cloudinary.com/imbriitneysam/image/upload/v1537239672/placeholder-min.png" data-url="{{ post.image_carousel }}" class="preload">
+												</a>
+												{% if post.category == 'series' %}
+														<div class="series"> Serie </div>
+														{% else %}
+														<div class="peliculas"> Pelicula </div>
+														{% endif %}
+														{% if post.idioma == 'Latino' %}
+
+																		<div class="latino" title="Audio Latino"></div>
+
+
+														{% else %}
+																		{% if post.idioma == 'Castellano' %}
+
+																		<div class="castellano" title="Audio Castellano"></div>
+
+																		{% else %}
+																		{% if post.idioma == 'Latino/Castellano' %}
+																		<div class="latino-castellano" title="Audio Latino y Castellano"></div>
+																		{% else %}
+
+																		{% if post.idioma == 'Latino/Castellano/Subtitulado' %}
+																		<div class="latino-castellano-subtitulado" title="Audio Latino, Castellano y Subtitulado"></div>
+																		{% else %}
+
+																		{% if post.idioma == 'Latino/Subtitulado' %}
+																		<div class="latino-subtitulado" title="Audio Latino y Subtitulado"></div>
+																		{% else %}
+
+																		{% if post.idioma == 'Castellano/Subtitulado' %}
+																		<div class="castellano-subtitulado" title="Audio Castellano y Subtitulado"></div>
+																		{% else %}
+
+																		<div class="subtitulado" title="Audio Subtitulado"></div>
+
+																		{% endif %}
+
+																		{% endif %}
+																		{% endif %}
+
+																		{% endif %}
+																		{% endif %}
+
+																{% endif %}
+												<div class="titulo"> {{ post.calidad }} </div>
+										</div>
+								{% endif %}
+								<div class="box-info">
+										<div class="w3l-movie-text">
+												<h6>
+														<a onclick="mostrar()" class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+																		{{ post.title }}
+														</a>
+												</h6>
+										</div>
+								</div>
+						</div>
+						</div>
+			</article>
+				
+			{%endfor%}			
+			
+			<div class="col-md-12 col-xs-12 col-lg-12" style="margin-top: 15px;    margin-bottom: 5px;" align="center">
+				<a onclick="mostrar()" class="ver_capitulos" target="_self" href="{{ site.baseurl}}/contenido"><i class="fas fa-eye" style="padding-right: 10px;">  </i>Ver más contenido </a>
+				</div>
+
+			</div>
+
+		
+
+
+
+		
+				
+</div>
+
+ 
+
+																		 
+
+
+
+</main>

@@ -1,0 +1,1242 @@
+---
+comentarios: "si"
+---
+
+<!DOCTYPE html>
+<html lang="es" itemscope itemtype="http://schema.org/WebPage">
+		{% include head-post2.html %}
+
+
+		{% assign mantenimiento = 'no' %}
+	
+		
+		<body id="myBody" class="main-page has-push-menu yes-scroll">
+
+				{% assign temporadas = page.temporadas | size %}
+
+				{% if temporadas > 0 %}
+			<!-- partial:index.partial.html -->
+
+				<div id="fb-root"></div>
+			
+
+				<input id="url" name="url" type="hidden" value="{{ site.url }}{{ site.baseurl }}{{page.url}}">
+				<input id="imagen_portada" name="imagen_portada" type="hidden" value="{{ page.image_banner }}">
+				<div id="loader" class="loader" style="display:none;"></div>
+			
+				
+			
+								{% include svg-icons.html %}
+								<div class="header_pc" id="pc">  {% include header2.html %}</div>
+							
+      
+					{% if mantenimiento =='no' %}
+				   
+                        <section class="content">
+                        
+                        
+                            <main class="home"   id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+							
+                                <article role="article" class="post-content" itemprop="articleBody">
+
+							{% if page.clasificacion=='+18' %}
+
+													<div id="myModal-erotic" >
+														
+													</div>
+
+								{% endif %}
+
+										<div id="grid" class="row">
+										
+												<div class="col-md-12 col-xs-12 col-lg-12" style="    padding: 0;">
+										
+														<div id="grid" class="row" style="background-image: linear-gradient(0deg, rgb(17, 17, 17), rgba(0, 0, 0, 0.8)), url({{page.image_banner}});background-size: 100% 400px;background-repeat: no-repeat;">
+																<div class="col-md-12 col-xs-12 col-lg-12"  align="center" style="    margin: 45px 0px 0 0px;"> 								
+																		<h1 class="top_h2_1" itemprop="name">{{ page.title }}</h1>
+																 </div>
+		   
+														   <div class="col-md-2 col-xs-12 col-lg-2">
+		   
+														   </div>
+		   
+														   <div class="col-md-8 col-xs-12 col-lg-8">
+		   
+																   <div class="col-md-2 col-xs-12 col-lg-4 top_trailer" style="padding:0;">
+																		   {% if page.image_carousel %}
+																		   <img src="{{ page.image_carousel }}" alt="{{ page.title }}" class="post-cover">
+																			   {% endif %}
+																   
+		   
+																	</div>
+																	
+																	<div class="col-md-8 col-xs-12 col-lg-8" style="    padding: 0;">
+													   
+						   
+																		
+																		   <div class="row">
+					   
+																				
+																				   
+																				<div class="col-md-12 col-xs-12 col-lg-12 disable-select">
+																						<p itemprop="description" class="subtitle"> <span style="color:white; font-weight:bold;font-size: 18px;" >Titulo Original: </span> {{ page.titulo_original }}</p> 
+																					</div>
+										
+																				<div class="col-md-6 col-xs-6 col-lg-6 disable-select">
+																							
+																						  <p itemprop="description" class="subtitle"><span style="color:white; font-weight:bold;font-size: 18px;" >Año: </span>{{ page.anio }}</p>   
+																						 
+																							
+																				 </div>
+			
+																				 <div class="col-md-6 col-xs-6 col-lg-6 disable-select">
+			
+																				 <p itemprop="description" class="subtitle"> <span style="color:white; font-weight:bold;font-size: 18px;" >Calidad: </span> {{ page.calidad }}</p> 
+																				</div>
+									   
+																			   <div class="col-md-6 col-xs-6 col-lg-6 disable-select">
+																						   
+																								 <p itemprop="description" class="subtitle"><span style="color:white; font-weight:bold;font-size: 18px;" >Rating: </span>  {{ page.estrellas }} <i class="fa fa-star" aria-hidden="true"></i></p>   
+																								
+																							
+									   
+									   
+																			   </div>
+
+																			   <div class="col-md-6 col-xs-6 col-lg-6 disable-select">
+
+																					<p itemprop="description" class="subtitle"><span style="color:white; font-weight:bold;font-size: 18px;" >Nro. Episodios: </span> {{ page.episodios }}</p>
+
+																				</div>
+
+																			   <div class="col-md-12 col-xs-12 col-lg-12 disable-select">
+
+																					<p itemprop="description" class="subtitle"> <span style="color:white; font-weight:bold;font-size: 18px;" >Idioma: </span> {{ page.idioma }}</p> 
+											
+																				</div>
+									   
+									   
+																		   </div>
+																		   
+																		   <div class="row">
+					   
+																				   <div class="col-md-12 col-xs-12 col-lg-12 disable-select">
+					   
+																					  <p itemprop="description" class="subtitle"> <span style="color:white; font-weight:bold;font-size: 18px;" >Género: </span> {{ page.genero }}</p>   
+																				   </div>
+					   
+																				   <div class="col-md-6 col-xs-12 col-lg-6">  
+					   
+																						   <div class="descargas3" id="descargas3" style="display:none" >
+									   
+																								   <div class="row"  >
+															   
+																											   <div class=" share col-md-6 col-xs-6 col-lg-6">
+															   
+																												   
+																												  
+																										   
+																														   <a aria-label="Compartir en Facebook"href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
+																														   onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Compartir en Facebook">
+																															   <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+																														   </a>
+																												 
+															   
+																											   </div>
+											   
+																						   
+											   
+																								   </div>
+																							   </div>
+					   
+					   
+					   
+																				   </div>
+																				   
+																				   
+									   
+																			   
+																		
+																		   </div>
+					   
+																	   </div>
+		   
+															   <div class="col-md-12 col-xs-12 col-lg-12 disable-select ">
+																   <span style="color:white; font-weight:bold;font-size: 20px; " >Sinopsis: </span> 
+																   </div>
+																   <div class="col-md-12 col-xs-12 col-lg-12 sinopsis disable-select">
+																		   <p itemprop="description" class="subtitle"> {{ page.description }}</p>   
+																   </div>
+														   </div>
+		   
+		   
+														   <div class="col-md-2 col-xs-12 col-lg-2">
+		   
+														   </div>
+													   
+													   </div>
+		   
+							   
+													   
+													   
+													   
+													   
+												   </div>
+										
+												   <div class="col-md-0 col-xs-12 col-lg-12" style="    padding-top: 5px 0px 0px 0px;    background: #111111;">
+													{% assign series = site.posts | where:"category","series" %}
+													{% assign terror = series | where:"tags","Terror" %}
+													{% assign romance = series | where:"tags","Romance" %}
+													{% assign drama = series | where:"tags","Drama" %}
+													{% assign ciencia_ficcion = series | where:"tags","Ciencia-Ficcion" %}
+													{% assign accion = series | where:"tags","Accion" %}
+													{% assign fantasia = series | where:"tags","Fantasia" %}
+													{% assign animado = series | where:"tags","Animado" %}
+													{% assign comedia = series | where:"tags","Comedia" %}
+													{% assign eroticas = series | where:"tags","Erotico" %}
+													
+													<div class="col-md-12 col-xs-12 col-lg-2" style="background: #111111;">
+
+													</div>
+                                                    
+													<div class="col-md-12 col-xs-12 col-lg-8" style="background: #111111;">
+														
+
+															<div class="row">				
+																	<div class="col-md-12 col-lg-12" style="    padding: 0;">
+																			<h1 class="top_h2_1" style="    padding: 15px;"> Temporadas </h1>
+																		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+																				{% assign counter = 0 %}
+																				{% assign temporadas = page.temporadas | size %}
+
+																				{% if  temporadas > 0 %}
+
+																				{% for item in page.temporadas %}
+																				
+
+																				  {% if counter==0 %}
+																				 
+																				  <div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="heading{{counter}}">
+																							<h4 class="panel-title">
+																								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#click{{counter}}" aria-expanded="true" aria-controls="collapse{{counter}}" class="collapsed">
+																										{{page.temporadas[counter]}} 
+																								</a>
+																							</h4>
+																						</div>
+																						<div id="click{{counter}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{counter}}">
+																							<div class="panel-body">
+																									{% assign capitulos = page.chapters | size %}
+
+																									{% if capitulos > 0 %}
+	
+																										{% for chapter in page.chapters %}
+	
+																													{% for item in chapter %}
+																
+																															{% if item[0] != null and  item[1] != null%}
+	
+																															{% assign i = i | plus:1 %}
+	
+																															{% assign parte1 = 'temporada-1/' %}
+																															{% assign url = parte1 | append: item[1] %}
+																
+																																<a onclick="mostrar()" class="enlaces" href="{{  url | prepend: site.baseurl }}" title="{{ item[0] }}">
+																																	<i id="icon-visited{{i}}" class="fas fa-play" style="padding-right: 10px; color:#b50121"></i> Episodio {{ item[2] }} - {{ item[0] }}
+																																</a>
+	
+																
+																															{% endif %}
+																
+	
+																													{% endfor %}
+																												
+																												{% endfor %}
+	
+																										{% else %}
+	
+																										<p style="color: white;
+																										text-align: center;
+																										font-size: 25px;
+																										">Esta temporada aun no tiene capitulos disponibles, por favor seleccione otra temporada</p>
+	
+																										
+	
+																										{% endif %}
+																							</div>
+																						</div>
+																					</div>
+
+																				  
+																					
+																					
+																					{% else %}
+
+																					{% if counter == 1 %}
+
+																					
+
+																					<div class="panel panel-default">
+																							<div class="panel-heading" role="tab" id="heading{{counter}}">
+																								<h4 class="panel-title">
+																									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#click{{counter}}" aria-expanded="true" aria-controls="collapse{{counter}}" class="collapsed">
+																											{{page.temporadas[counter]}} 
+																									</a>
+																								</h4>
+																							</div>
+																							<div id="click{{counter}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{counter}}">
+																								<div class="panel-body">
+																										{% assign capitulos = page.chapters2 | size %}
+
+																										{% if capitulos > 0 %}
+		
+																											{% for chapter in page.chapters2 %}
+		
+																														{% for item in chapter %}
+																	
+																																{% if item[0] != null and  item[1] != null%}
+		
+																																{% assign i = i | plus:1 %}
+		
+																																{% assign parte1 = 'temporada-2/' %}
+																																{% assign url = parte1 | append: item[1] %}
+																	
+																																	<a onclick="mostrar()" class="enlaces" href="{{  url | prepend: site.baseurl }}" title="{{ item[0] }}">
+																																		<i id="icon-visited{{i}}" class="fas fa-play" style="padding-right: 10px; color:#b50121"></i> Episodio {{ item[2] }} - {{ item[0] }}
+																																	</a>
+		
+																	
+																																{% endif %}
+																	
+		
+																														{% endfor %}
+																													
+																													{% endfor %}
+		
+																											{% else %}
+		
+																											<p style="color: white;
+																											text-align: center;
+																											font-size: 25px;
+																											">Esta temporada aun no tiene capitulos disponibles, por favor seleccione otra temporada</p>
+		
+																											
+		
+																											{% endif %}
+																								</div>
+																							</div>
+																						</div>
+
+																				      	
+
+																						{% endif %}
+
+
+																						{% if counter == 2 %}
+
+																						
+
+																					<div class="panel panel-default">
+																							<div class="panel-heading" role="tab" id="heading{{counter}}">
+																								<h4 class="panel-title">
+																									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#click{{counter}}" aria-expanded="true" aria-controls="collapse{{counter}}" class="collapsed">
+																											{{page.temporadas[counter]}} 
+																									</a>
+																								</h4>
+																							</div>
+																							<div id="click{{counter}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{counter}}">
+																								<div class="panel-body">
+																										{% assign capitulos = page.chapters3 | size %}
+
+																										{% if capitulos > 0 %}
+		
+																											{% for chapter in page.chapters3 %}
+		
+																														{% for item in chapter %}
+																	
+																																{% if item[0] != null and  item[1] != null%}
+		
+																																{% assign i = i | plus:1 %}
+		
+																																{% assign parte1 = 'temporada-3/' %}
+																																{% assign url = parte1 | append: item[1] %}
+																	
+																																	<a onclick="mostrar()" class="enlaces" href="{{  url | prepend: site.baseurl }}" title="{{ item[0] }}">
+																																		<i id="icon-visited{{i}}" class="fas fa-play" style="padding-right: 10px; color:#b50121"></i> Episodio {{ item[2] }} - {{ item[0] }}
+																																	</a>
+		
+																	
+																																{% endif %}
+																	
+		
+																														{% endfor %}
+																													
+																													{% endfor %}
+		
+																											{% else %}
+		
+																											<p style="color: white;
+																											text-align: center;
+																											font-size: 25px;
+																											">Esta temporada aun no tiene capitulos disponibles, por favor seleccione otra temporada</p>
+		
+																											
+		
+																											{% endif %}
+																								</div>
+																							</div>
+																						</div>
+
+																					    
+
+																						{% endif %}
+
+
+
+																						{% if counter == 3 %}
+																						
+																					<div class="panel panel-default">
+																							<div class="panel-heading" role="tab" id="heading{{counter}}">
+																								<h4 class="panel-title">
+																									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#click{{counter}}" aria-expanded="true" aria-controls="collapse{{counter}}" class="collapsed">
+																											{{page.temporadas[counter]}} 
+																									</a>
+																								</h4>
+																							</div>
+																							<div id="click{{counter}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{counter}}">
+																								<div class="panel-body">
+																										{% assign capitulos = page.chapters4 | size %}
+
+																										{% if capitulos > 0 %}
+		
+																											{% for chapter in page.chapters4 %}
+		
+																														{% for item in chapter %}
+																	
+																																{% if item[0] != null and  item[1] != null%}
+		
+																																{% assign i = i | plus:1 %}
+		
+																																{% assign parte1 = 'temporada-4/' %}
+																																{% assign url = parte1 | append: item[1] %}
+																	
+																																	<a onclick="mostrar()" class="enlaces" href="{{  url | prepend: site.baseurl }}" title="{{ item[0] }}">
+																																		<i id="icon-visited{{i}}" class="fas fa-play" style="padding-right: 10px; color:#b50121"></i> Episodio {{ item[2] }} - {{ item[0] }}
+																																	</a>
+		
+																	
+																																{% endif %}
+																	
+		
+																														{% endfor %}
+																													
+																													{% endfor %}
+		
+																											{% else %}
+		
+																											<p style="color: white;
+																											text-align: center;
+																											font-size: 25px;
+																											">Esta temporada aun no tiene capitulos disponibles, por favor seleccione otra temporada</p>
+		
+																											
+		
+																											{% endif %}
+																								</div>
+																							</div>
+																						</div>
+
+																				    	
+
+																						{% endif %}
+
+
+																						{% if counter == 4 %}
+																					
+
+																					<div class="panel panel-default">
+																							<div class="panel-heading" role="tab" id="heading{{counter}}">
+																								<h4 class="panel-title">
+																									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#click{{counter}}" aria-expanded="true" aria-controls="collapse{{counter}}" class="collapsed">
+																											{{page.temporadas[counter]}} 
+																									</a>
+																								</h4>
+																							</div>
+																							<div id="click{{counter}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{counter}}">
+																								<div class="panel-body">
+																										{% assign capitulos = page.chapters5 | size %}
+
+																										{% if capitulos > 0 %}
+		
+																											{% for chapter in page.chapters5 %}
+		
+																														{% for item in chapter %}
+																	
+																																{% if item[0] != null and  item[1] != null%}
+		
+																																{% assign i = i | plus:1 %}
+		
+																																{% assign parte1 = 'temporada-5/' %}
+																																{% assign url = parte1 | append: item[1] %}
+																	
+																																	<a onclick="mostrar()" class="enlaces" href="{{  url | prepend: site.baseurl }}" title="{{ item[0] }}">
+																																		<i id="icon-visited{{i}}" class="fas fa-play" style="padding-right: 10px; color:#b50121"></i> Episodio {{ item[2] }} - {{ item[0] }}
+																																	</a>
+		
+																	
+																																{% endif %}
+																	
+		
+																														{% endfor %}
+																													
+																													{% endfor %}
+		
+																											{% else %}
+		
+																											<p style="color: white;
+																											text-align: center;
+																											font-size: 25px;
+																											">Esta temporada aun no tiene capitulos disponibles, por favor seleccione otra temporada</p>
+		
+																											
+		
+																											{% endif %}
+																								</div>
+																							</div>
+																						</div>
+
+																					
+
+																						{% endif %}
+
+
+
+																						{% if counter == 5 %}
+																					
+
+																					<div class="panel panel-default">
+																							<div class="panel-heading" role="tab" id="heading{{counter}}">
+																								<h4 class="panel-title">
+																									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#click{{counter}}" aria-expanded="true" aria-controls="collapse{{counter}}" class="collapsed">
+																											{{page.temporadas[counter]}} 
+																									</a>
+																								</h4>
+																							</div>
+																							<div id="click{{counter}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{counter}}">
+																								<div class="panel-body">
+																										{% assign capitulos = page.chapters6 | size %}
+
+																										{% if capitulos > 0 %}
+		
+																											{% for chapter in page.chapters6 %}
+		
+																														{% for item in chapter %}
+																	
+																																{% if item[0] != null and  item[1] != null%}
+		
+																																{% assign i = i | plus:1 %}
+		
+																																{% assign parte1 = 'temporada-6/' %}
+																																{% assign url = parte1 | append: item[1] %}
+																	
+																																	<a onclick="mostrar()" class="enlaces" href="{{  url | prepend: site.baseurl }}" title="{{ item[0] }}">
+																																		<i id="icon-visited{{i}}" class="fas fa-play" style="padding-right: 10px; color:#b50121"></i> Episodio {{ item[2] }} - {{ item[0] }}
+																																	</a>
+		
+																	
+																																{% endif %}
+																	
+		
+																														{% endfor %}
+																													
+																													{% endfor %}
+		
+																											{% else %}
+		
+																											<p style="color: white;
+																											text-align: center;
+																											font-size: 25px;
+																											">Esta temporada aun no tiene capitulos disponibles, por favor seleccione otra temporada</p>
+		
+																											
+		
+																											{% endif %}
+																								</div>
+																							</div>
+																						</div>
+
+																				     
+
+																						{% endif %}
+
+
+																						{% if counter == 6 %}
+
+																					
+
+																					<div class="panel panel-default">
+																							<div class="panel-heading" role="tab" id="heading{{counter}}">
+																								<h4 class="panel-title">
+																									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#click{{counter}}" aria-expanded="true" aria-controls="collapse{{counter}}" class="collapsed">
+																											{{page.temporadas[counter]}} 
+																									</a>
+																								</h4>
+																							</div>
+																							<div id="click{{counter}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{counter}}">
+																								<div class="panel-body">
+																										{% assign capitulos = page.chapters7 | size %}
+
+																										{% if capitulos > 0 %}
+		
+																											{% for chapter in page.chapters7 %}
+		
+																														{% for item in chapter %}
+																	
+																																{% if item[0] != null and  item[1] != null%}
+		
+																																{% assign i = i | plus:1 %}
+		
+																																{% assign parte1 = 'temporada-7/' %}
+																																{% assign url = parte1 | append: item[1] %}
+																	
+																																	<a onclick="mostrar()" class="enlaces" href="{{  url | prepend: site.baseurl }}" title="{{ item[0] }}">
+																																		<i id="icon-visited{{i}}" class="fas fa-play" style="padding-right: 10px; color:#b50121"></i> Episodio {{ item[2] }} - {{ item[0] }}
+																																	</a>
+		
+																	
+																																{% endif %}
+																	
+		
+																														{% endfor %}
+																													
+																													{% endfor %}
+		
+																											{% else %}
+		
+																											<p style="color: white;
+																											text-align: center;
+																											font-size: 25px;
+																											">Esta temporada aun no tiene capitulos disponibles, por favor seleccione otra temporada</p>
+		
+																											
+		
+																											{% endif %}
+																								</div>
+																							</div>
+																						</div>
+
+																					   
+
+																						{% endif %}
+
+
+
+																						{% if counter == 7 %}
+
+																						
+
+																						<div class="panel panel-default">
+																								<div class="panel-heading" role="tab" id="heading{{counter}}">
+																									<h4 class="panel-title">
+																										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#click{{counter}}" aria-expanded="true" aria-controls="collapse{{counter}}" class="collapsed">
+																												{{page.temporadas[counter]}} 
+																										</a>
+																									</h4>
+																								</div>
+																								<div id="click{{counter}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{counter}}">
+																									<div class="panel-body">
+																											{% assign capitulos = page.chapters8 | size %}
+	
+																											{% if capitulos > 0 %}
+			
+																												{% for chapter in page.chapters8 %}
+			
+																															{% for item in chapter %}
+																		
+																																	{% if item[0] != null and  item[1] != null%}
+			
+																																	{% assign i = i | plus:1 %}
+			
+																																	{% assign parte1 = 'temporada-8/' %}
+																																	{% assign url = parte1 | append: item[1] %}
+																		
+																																		<a onclick="mostrar()" class="enlaces" href="{{  url | prepend: site.baseurl }}" title="{{ item[0] }}">
+																																			<i id="icon-visited{{i}}" class="fas fa-play" style="padding-right: 10px; color:#b50121"></i> Episodio {{ item[2] }} - {{ item[0] }}
+																																		</a>
+			
+																		
+																																	{% endif %}
+																		
+			
+																															{% endfor %}
+																														
+																														{% endfor %}
+			
+																												{% else %}
+			
+																												<p style="color: white;
+																												text-align: center;
+																												font-size: 25px;
+																												">Esta temporada aun no tiene capitulos disponibles, por favor seleccione otra temporada</p>
+			
+																												
+			
+																												{% endif %}
+																									</div>
+																								</div>
+																							</div>
+
+																					      
+	
+																							{% endif %}
+
+
+
+																							{% if counter == 8 %}
+
+																							
+
+																							<div class="panel panel-default">
+																									<div class="panel-heading" role="tab" id="heading{{counter}}">
+																										<h4 class="panel-title">
+																											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#click{{counter}}" aria-expanded="true" aria-controls="collapse{{counter}}" class="collapsed">
+																													{{page.temporadas[counter]}} 
+																											</a>
+																										</h4>
+																									</div>
+																									<div id="click{{counter}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{counter}}">
+																										<div class="panel-body">
+																												{% assign capitulos = page.chapters9 | size %}
+		
+																												{% if capitulos > 0 %}
+				
+																													{% for chapter in page.chapters9 %}
+				
+																																{% for item in chapter %}
+																			
+																																		{% if item[0] != null and  item[1] != null%}
+				
+																																		{% assign i = i | plus:1 %}
+				
+																																		{% assign parte1 = 'temporada-9/' %}
+																																		{% assign url = parte1 | append: item[1] %}
+																			
+																																			<a onclick="mostrar()" class="enlaces" href="{{  url | prepend: site.baseurl }}" title="{{ item[0] }}">
+																																				<i id="icon-visited{{i}}" class="fas fa-play" style="padding-right: 10px; color:#b50121"></i> Episodio {{ item[2] }} - {{ item[0] }}
+																																			</a>
+				
+																			
+																																		{% endif %}
+																			
+				
+																																{% endfor %}
+																															
+																															{% endfor %}
+				
+																													{% else %}
+				
+																													<p style="color: white;
+																													text-align: center;
+																													font-size: 25px;
+																													">Esta temporada aun no tiene capitulos disponibles, por favor seleccione otra temporada</p>
+				
+																													
+				
+																													{% endif %}
+																										</div>
+																									</div>
+																								</div>
+
+																						     
+		
+																								{% endif %}
+
+
+
+																								{% if counter == 9 %}
+
+																							
+
+																								<div class="panel panel-default">
+																										<div class="panel-heading" role="tab" id="heading{{counter}}">
+																											<h4 class="panel-title">
+																												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#click{{counter}}" aria-expanded="true" aria-controls="collapse{{counter}}" class="collapsed">
+																														{{page.temporadas[counter]}} 
+																												</a>
+																											</h4>
+																										</div>
+																										<div id="click{{counter}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{counter}}">
+																											<div class="panel-body">
+																													{% assign capitulos = page.chapters10 | size %}
+			
+																													{% if capitulos > 0 %}
+					
+																														{% for chapter in page.chapters10 %}
+					
+																																	{% for item in chapter %}
+																				
+																																			{% if item[0] != null and  item[1] != null%}
+					
+																																			{% assign i = i | plus:1 %}
+					
+																																			{% assign parte1 = 'temporada-10/' %}
+																																			{% assign url = parte1 | append: item[1] %}
+																				
+																																				<a onclick="mostrar()" class="enlaces" href="{{  url | prepend: site.baseurl }}" title="{{ item[0] }}">
+																																					<i id="icon-visited{{i}}" class="fas fa-play" style="padding-right: 10px; color:#b50121"></i> Episodio {{ item[2] }} - {{ item[0] }}
+																																				</a>
+					
+																				
+																																			{% endif %}
+																				
+					
+																																	{% endfor %}
+																																
+																																{% endfor %}
+					
+																														{% else %}
+					
+																														<p style="color: white;
+																														text-align: center;
+																														font-size: 25px;
+																														">Esta temporada aun no tiene capitulos disponibles, por favor seleccione otra temporada</p>
+					
+																														
+					
+																														{% endif %}
+																											</div>
+																										</div>
+																									</div>
+
+																								  
+			
+																									{% endif %}
+
+
+																									{% if counter == 10 %}
+
+																								
+
+																									<div class="panel panel-default">
+																											<div class="panel-heading" role="tab" id="heading{{counter}}">
+																												<h4 class="panel-title">
+																													<a role="button" data-toggle="collapse" data-parent="#accordion" href="#click{{counter}}" aria-expanded="true" aria-controls="collapse{{counter}}" class="collapsed">
+																															{{page.temporadas[counter]}} 
+																													</a>
+																												</h4>
+																											</div>
+																											<div id="click{{counter}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{counter}}">
+																												<div class="panel-body">
+																														{% assign capitulos = page.chapters11 | size %}
+				
+																														{% if capitulos > 0 %}
+						
+																															{% for chapter in page.chapters11 %}
+						
+																																		{% for item in chapter %}
+																					
+																																				{% if item[0] != null and  item[1] != null%}
+						
+																																				{% assign i = i | plus:1 %}
+						
+																																				{% assign parte1 = 'temporada-11/' %}
+																																				{% assign url = parte1 | append: item[1] %}
+																					
+																																					<a onclick="mostrar()" class="enlaces" href="{{  url | prepend: site.baseurl }}" title="{{ item[0] }}">
+																																						<i id="icon-visited{{i}}" class="fas fa-play" style="padding-right: 10px; color:#b50121"></i> Episodio {{ item[2] }} - {{ item[0] }}
+																																					</a>
+						
+																					
+																																				{% endif %}
+																					
+						
+																																		{% endfor %}
+																																	
+																																	{% endfor %}
+						
+																															{% else %}
+						
+																															<p style="color: white;
+																															text-align: center;
+																															font-size: 25px;
+																															">Esta temporada aun no tiene capitulos disponibles, por favor seleccione otra temporada</p>
+						
+																															
+						
+																															{% endif %}
+																												</div>
+																											</div>
+																										</div>
+
+																								     	
+				
+																										{% endif %}
+
+
+
+																										{% if counter == 11 %}
+
+																									
+
+																										<div class="panel panel-default">
+																												<div class="panel-heading" role="tab" id="heading{{counter}}">
+																													<h4 class="panel-title">
+																														<a role="button" data-toggle="collapse" data-parent="#accordion" href="#click{{counter}}" aria-expanded="true" aria-controls="collapse{{counter}}" class="collapsed">
+																																{{page.temporadas[counter]}} 
+																														</a>
+																													</h4>
+																												</div>
+																												<div id="click{{counter}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{counter}}">
+																													<div class="panel-body">
+																															{% assign capitulos = page.chapters12 | size %}
+					
+																															{% if capitulos > 0 %}
+							
+																																{% for chapter in page.chapters12 %}
+							
+																																			{% for item in chapter %}
+																						
+																																					{% if item[0] != null and  item[1] != null%}
+							
+																																					{% assign i = i | plus:1 %}
+							
+																																					{% assign parte1 = 'temporada-12/' %}
+																																					{% assign url = parte1 | append: item[1] %}
+																						
+																																						<a onclick="mostrar()" class="enlaces" href="{{  url | prepend: site.baseurl }}" title="{{ item[0] }}">
+																																							<i id="icon-visited{{i}}" class="fas fa-play" style="padding-right: 10px; color:#b50121"></i> Episodio {{ item[2] }} - {{ item[0] }}
+																																						</a>
+							
+																						
+																																					{% endif %}
+																						
+							
+																																			{% endfor %}
+																																		
+																																		{% endfor %}
+							
+																																{% else %}
+							
+																																<p style="color: white;
+																																text-align: center;
+																																font-size: 25px;
+																																">Esta temporada aun no tiene capitulos disponibles, por favor seleccione otra temporada</p>
+							
+																																
+							
+																																{% endif %}
+																													</div>
+																												</div>
+																											</div>
+
+																									     
+					
+																											{% endif %}
+	
+
+
+
+																						
+																				
+																					{%endif%}
+																					{% assign counter=counter | plus:1 %}
+
+
+
+																				{% endfor %}
+
+
+																				{% endif %}
+
+
+																		</div>
+																	</div>
+															</div>
+
+															
+														</div>
+
+														<div class="col-md-12 col-xs-12 col-lg-2" style="background: #111111;">
+
+															</div>
+									
+								
+                                                  
+
+                                                      
+													</div>
+				
+                                            </div>
+                                            
+                                            <div class="row">
+
+													<div class="col-12 col-m-12 col-lg-2">
+
+													</div>
+
+
+													<div class="col-12 col-m-12 col-lg-8">
+															<h3 id="comments" class="derecha">Comentarios</h3>
+															<div id="botonCargarComentarios" align="center">
+																	<a onclick="cargarComentarios()" class="ver_capitulos"  href="#comments">Cargar comentarios </a>
+															</div>
+
+															<div id="comentarios_facebook" style="display:none">
+
+																	<img id="gif" alt="Cargando comentarios" src="/load.gif" style="width: 50px;"/>
+																	<p id="comentario-gif" style="color:white; font-size: 16px; text-align:center;">Cargando comentarios, por favor espere...</p>
+																		<div  class="fb-comments" style="margin-top: 45px;"  data-colorscheme="dark" data-href="{{ site.url }}{{ page.url }}" data-width="100%" data-numposts="5">
+																		</div>
+
+
+															</div>
+
+														
+							
+	
+														</div>
+
+														<div class="col-12 col-m-12 col-lg-2">
+
+															</div>
+
+			
+
+                                            </div>
+
+											
+										
+								
+                            </article>                       
+
+		
+				</main>
+
+
+
+				
+						</section>
+
+						<div class="navbar-bottom" id="navbar-abajo" >
+							<div id="menu_abajo" class="row flex-grid">
+
+															{% if page.url == "/" %}
+															<div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0; "> 
+																											<a onclick="mostrar()" style="color: white;" href="{{ site.baseurl }}/"><i class="fas fa-home" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Inicio </p></i></a>
+
+															</div>
+															{% else %}
+
+															<div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0;"> 
+																							<a onclick="mostrar()" href="{{ site.baseurl }}/"><i class="fas fa-home" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Inicio </p></i></a>
+
+															</div>
+
+															{% endif %}
+
+															{% if page.url == "/contenido/" %}
+															<div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0; "> 
+																											<a onclick="mostrar()" style="color: white;" href="{{ site.baseurl }}/contenido/"><i class="fas fa-compass" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Explorar </p></i></a>
+
+															</div>
+															{% else %}
+
+															<div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0;"> 
+																							<a onclick="mostrar()" href="{{ site.baseurl }}/contenido/"><i class="fas fa-compass" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Explorar </p></i></a>
+
+															</div>
+
+															{% endif %}
+	
+															{% if page.url == "/peliculas" %}
+															<div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0; "> 
+																											 <a onclick="mostrar()" style="color: white;" href="{{ site.url }}{{ site.baseurl }}/peliculas"><i class="fas fa-film" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Peliculas </p></i></a>
+
+															</div>
+															{% else %}
+
+															<div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0;"> 
+																							<a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}/peliculas"><i class="fas fa-film" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Peliculas </p></i></a>
+
+															 </div>
+
+
+															{% endif %}
+
+															{% if page.url == "/series" %}
+															<div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0; "> 
+																											 <a onclick="mostrar()" style="color: white;" href="{{ site.url }}{{ site.baseurl }}/series" ><i class="fas fa-file-video" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px"> Series </p></i></a>
+
+															</div>
+															{% else %}
+															<div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0;"> 
+																							<a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}/series" ><i class="fas fa-file-video" style="line-height: 1.5;font-size: 18px;"> <br> <p style="font-size:10px" > Series </p></i></a>
+
+															</div>
+
+
+															{% endif %}
+
+															{% if page.url == "/historial" %}
+															<div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0; "> 
+																											 <a onclick="mostrar()" style="color: white;" href="{{ site.url }}{{ site.baseurl }}/historial" ><i class="fas fa-clock" style="line-height: 1.5;font-size: 18px;"></i><br><p style="font-size:10px"> Historial </p></a>
+
+															</div>
+															{% else %}
+															<div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0;"> 
+																							<a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}/historial" ><i class="fas fa-clock" style="line-height: 1.5;font-size: 18px;"></i><br><p style="font-size:10px"> Historial </p></a>
+
+															</div>
+
+
+															{% endif %}
+
+
+															{% if page.url == "/informacion" %}
+															<div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0; "> 
+																											 <a onclick="mostrar()" style="color: white;" href="{{ site.url }}{{ site.baseurl }}/informacion" ><i class="fas fa-bars" style="line-height: 1.5;font-size: 18px;"></i><br> <p style="font-size:10px"> Nosotros</p></a>
+
+															</div>
+															{% else %}
+															<div class="box-item col-xs-2 col-sm-2 col-md-2 col-lg-2 shown" style="padding:0;"> 
+																							<a onclick="mostrar()" href="{{ site.url }}{{ site.baseurl }}/informacion" ><i class="fas fa-bars" style="line-height: 1.5;font-size: 18px;"></i> <br> <p style="font-size:10px"> Nosotros</p></a>
+
+															</div>
+
+
+															{% endif %}
+
+
+							</div>
+
+							<a id="pwa"  style=" float: none;
+							width: auto;
+							padding: 0;
+							display: none;font-size: 14px;text-align: justify;margin-bottom: 0px;border-radius: 0px;background-color: rgb(210, 241, 186);color: rgb(51, 51, 51);border: 1px solid rgb(171, 226, 173);padding: 5px 5px;" ><span style="font-weight:bold">  ¿Le gusta BreakTimeTV? </span> Pruebe usar la versión PWA, que incluye más funciones, obténgalo dando click en este recuadro </a>
+											 
+			 </div>
+						
+						
+        
+				{% include footer-post2.html %}
+
+
+
+				
+
+
+		
+
+				{% else %}
+
+				<div style="margin: 0px auto;  max-width: 600px; text-align: center; padding-top: 60px;">
+						<img style="width: 250px;" src="/assets/img/gif-mantenimiento.gif" width="100%" alt="Página no encontrada">
+						<p style="color:white; font-size:25px; padding-top: 25px;"><strong>Estamos en Mantenimiento</strong></p>
+						<p style="color:white;     padding-top: 25px;     font-size: 23px;">Lo sentimos, en estos momentos estamos realizando un mantenimiento a nuestras peliculas y series, regresaremos lo más pronto posible</p>
+					</div>
+
+
+			
+			</div>
+			{% endif %}
+
+			<script>
+
+			(function($) {
+				'use strict';
+				
+				jQuery(document).on('ready', function(){
+				
+						$('a.page-scroll').on('click', function(e){
+							var anchor = $(this);
+							$('html, body').stop().animate({
+								scrollTop: $(anchor.attr('href')).offset().top - 50
+							}, 1500);
+							e.preventDefault();
+						});		
+
+				}); 	
+
+							
+			})(jQuery);
+
+          var erotica = document.getElementById("myModal-erotic");
+            if(erotica){
+
+              swal({
+                title: "!ALTO AHÍ MARRANO¡",
+                text: "Estas por ver un contenido sólo para +18. ¿Tienes la edad para ver esto, puerco?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#28a745",
+                confirmButtonText: "Si, tengo 18 años",
+                cancelButtonText: "No, sácame de aquí",
+                closeOnConfirm: true,
+                closeOnCancel: true
+            },
+            function(isConfirm){
+                if (isConfirm) {
+                 
+                    
+
+                } else {
+                    document.location.href="/";
+                }
+            });
+              
+
+			}
+
+		
+			
+			
+			</script>
+
+						<script>
+
+
+
+																						function cargarComentarios(){
+																							document.getElementById("botonCargarComentarios").style.display = "none";
+																							document.getElementById("comentarios_facebook").style.display = "block";
+																							
+
+																							loadAPI();
+
+																							
+																						}
+
+
+																					function loadAPI() {
+																								var js = document.createElement('script');
+																								js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v4.0&appId=491895904626108&autoLogAppEvents=1';
+																								document.body.appendChild(js);
+
+																								window.fbAsyncInit = function(){
+																									//FB.init({ status: false, cookie: true, xfbml: true });
+																									FB.Event.subscribe("xfbml.render", function(){
+																									document.getElementById("gif").style.display = "none";
+																									document.getElementById("comentario-gif").style.display = "none";
+																									});
+																								};
+
+																								
+																								}
+						
+						
+						</script>
+
+				{% else %}
+
+
+				{% include mantenimiento.html %}
+
+
+				{% endif %}
+			
+
+		
+        
+    </body>
+</html>

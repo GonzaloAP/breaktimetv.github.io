@@ -1,0 +1,82 @@
+<div id="search_wrapper" class="search-wrapper" style="    padding-top: 15px;
+padding-left: 0;
+padding-right: 0;">
+
+       
+    <div id="search_form" class="search-form">
+
+            <div class="row"> 
+        
+                    <div class="col-lg-3"></div>
+                    
+                      <div class="col-lg-6" style="  padding-right: 0;">
+                          
+                            <svg class="icon-remove-sign" id="cerrar_busqueda"><use xlink:href="#atras"></use></svg> 
+                            <input type="hidden" id="input_listado" value="no"> 
+                            <label style="display: block;">
+                                <span style="color:white;padding-left: 10px;font-size: 18px;">Buscador</span>
+                                <input type="text" id="input_busqueda" class="search-field" placeholder="Escribe tu pelicula,serie,género o año">
+                            </label>
+                
+                            <svg style="display:none;" class="icon-remove-sign2" id="limpiar_busqueda"><use xlink:href="#icon-close"></use></svg>
+                        
+                        </div>
+                            
+                      <div class="col-lg-3"></div>
+                
+                </div>
+
+
+     
+        <ul id="lista" class="search-results search-list">
+              
+        </ul>
+        <div id="podria_gustarte" class="row" style="position: absolute; top: 90px;height: 570px;overflow: auto;display:none">
+
+            <p style="color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 0px 10px 15px 5px;    text-align: center;">Quizá podría gustarte....</p>
+             {% assign post_news = site.posts %}
+             {% assign min = 0 %}
+             {% for post in post_news limit:15 %}
+                 {% assign max = post_news.size %}
+                 {% assign diff = max | minus: min %}
+                 {% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}
+                 {% assign cadena1 = randomNumber %}
+                 {% assign cadena2="," %}
+                 {% assign cadena_final = cadena_final | append: cadena1 | append: cadena2   %}
+                 {% assign min=min | plus:1 %}
+             {%endfor%}
+             {% assign my_array = cadena_final | split: "," %}
+             {% assign no_repetidos = my_array | uniq | join: "," %}
+             {% assign no_repetidos_split = no_repetidos | split: "," %}
+                 {% for randomNumber in no_repetidos_split %}
+                        {% assign randomNumber2 = randomNumber | plus: 0 %}
+                        <a  class="" onclick="mostrar()" href="{{ post_news[randomNumber2].url | prepend: site.baseurl }}">
+                       <div title="{{ post_news[randomNumber2].title }}" class="col-xs-12 col-sm-12 col-md-6 col-lg-4" style="    padding-bottom: 15px;    padding-right: 0;padding-left: 0;" >
+                                <div class="row" style="display: flex;
+                                align-items: center;">
+                                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="    padding-left: 0;
+                                  text-align: center;">
+                                      <img style="width: 150px;    height: 80px;" src="{{ post_news[randomNumber2].image_banner }}" />
+
+                                  </div>
+
+                                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="padding: 0;">
+                                      <p class="color_busqueda">{{ post_news[randomNumber2].title }} </p>
+                                    </div>
+
+                     
+                                  
+                                </div>
+                                      
+                            </div>
+                          </a>
+                  {% endfor %}
+            
+          </div>
+
+
+    </div>
+</div>
