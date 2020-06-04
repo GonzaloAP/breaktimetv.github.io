@@ -35,6 +35,7 @@ chapters5:
     capitulo-12: ["Frikis y nerds", "capitulo-12/", "12"]
     capitulo-13: ["I Am Legends", "capitulo-13/", "13"]
     capitulo-14: ["The One Where We’re Trapped On TV", "capitulo-14/", "14"]
+    capitulo-15: ["Swan Thong", "capitulo-15/", "15"]
 
     
 

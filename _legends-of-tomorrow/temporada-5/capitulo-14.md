@@ -6,7 +6,7 @@ category: 'series'
 capitulo: 'yes'
 anio: '2020'
 prev: 'capitulo-13'
-proximo: ''
+proximo: 'capitulo-15'
 sandbox: allow-same-origin allow-forms
 idioma: 'Subtitulado'
 calidad: 'Full HD'
